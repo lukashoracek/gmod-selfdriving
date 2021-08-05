@@ -119,7 +119,7 @@ if SERVER then
 
     --// PID controllers
     local throttlePID = pid.new(throttleAggresivity, 0, throttleAggresivity * 0.25)
-    local steerPID = pid.new(1.5, 0.001, 1)
+    local steerPID = pid.new(1, 0.001, 0.1)
 
     --// Last time
     local lastTime = getTime()
