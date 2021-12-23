@@ -284,11 +284,14 @@ if SERVER then
             local leftDist = left.dist
             local rightDist = right.dist
 
-            if leftTurn then
-                leftDist = noTurnDist.left
-            end
-            if rightTurn then
-                rightDist = noTurnDist.right
+            --// Only lock distances when we can go straight
+            if straight then
+                if leftTurn then
+                    leftDist = noTurnDist.left
+                end
+                if rightTurn then
+                    rightDist = noTurnDist.right
+                end
             end
 
             --// Pull over
